@@ -1,58 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      WEB DEV
-    </title>
-    <style>
-      h1 {
-        font-size: 40px;
-        font-family: Candara;
-        font-weight: normal;
-        color: rgb(0, 231, 0);
-        text-align: center;
-      }
+    <title> WEB DEV</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
+    <style>
       #OIP {
-        width: 100%;
         height: 360px;
         object-fit: cover;
-      }
-
-      h2 {
-        font-family: Calibri;
-        font-size: 33px;
-        color: rgb(211,23,11);
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .yup {
-        font-family: Verdana;
-        color: rgb(0,0,245);
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto 0 auto;
+        width: 100%;
       }
     </style>
     
   </head>
   <body>
-    <div id="container">
-   <h1>Web Devs</h1>
-    <img id="OIP" src="https://web-dev--avantikthakur.repl.co/static/OIP.jpeg">
-   <h2>About Web Devs</h2>
-    <p class="yup">
+    <div class="container">
+   <h1 class="text-center mt-2 mb-4">{{company_name}}</h1>
+    <img class="img-fluid mb-5" id="OIP" src="https://web-dev--avantikthakur.repl.co/static/OIP.jpeg">
+   <h2 class="text-center mt-8 mb-7">About Web Devs</h2>
+    <p class="lead">
       quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare.
     </p>
 
-    <h2>Open Positions</h2>
-    <p class="yup">To Do- show the jobs</p>
-      <div style="text-align: center;">
-    <button>Contact us</button>
-        <p>Copyright 2023, Web Devs</p>
+    <h2 class="text-center mt-4 mb-4">Open Positions</h2>
+    <div>
+      
+    {% for job in jobs %}
+    {% include 'jobitem.html' %}
+    {% endfor %}
+      
+    </div>
+      <div class="text-center">
+        
+    <button
+      class="btn btn-primary btn-lg">Contact us
+    </button>
+        
+        <p 
+          class="mt-4">Copyright 2023, Web Devs
+        </p>
+        
       </div>
       
     </div>
